@@ -1,0 +1,39 @@
+{%extends 'base.html'%}
+{%block title%}Contact{%endblock title%}
+{%block body%}
+<div style="
+    background-image: url('https://media.istockphoto.com/id/523500502/photo/blur-hanging-lamp-on-bar-counter.jpg?s=1024x1024&w=is&k=20&c=h396xeQ_mEIqNA3PsQSC6uZn8n9831FydPfejbjhQXU=');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 690px;">
+</div>
+<div class="container">
+  <h2 class="text-center mt-4">Contact Us</h2>
+  <form method="post" action="/contact">
+    {% csrf_token %}
+
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="mobile">Mobile</label>
+      <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Enter your mobile no" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email id" required>
+    </div>
+
+    <div class="form-group">
+      <label for="desc">Message</label>
+      <textarea class="form-control" id="desc" name="desc" rows="3" placeholder="Write your message here" required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+{%endblock body%}
